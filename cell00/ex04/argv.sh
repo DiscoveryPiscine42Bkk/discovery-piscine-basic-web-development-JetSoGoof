@@ -7,3 +7,7 @@ else
     echo "$arg"
   done
 fi
+
+# chmod +x argv.sh
+# ./argv.sh
+# ls -1
