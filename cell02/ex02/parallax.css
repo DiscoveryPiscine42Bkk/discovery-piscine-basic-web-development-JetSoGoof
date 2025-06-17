@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Parallax section */
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* First image */
+.parallax-1 {
+  background-image: url("https://th.traveligo.com/gomoment/uploads/images/08-%E0%B8%96%E0%B8%99%E0%B8%99.jpg");
+}
+
+/* Second image */
+.parallax-2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a2/View_of_loch_lomond.JPG");
+}
+
+/* Black content block */
+.section.black {
+  background-color: black;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
