@@ -22,6 +22,7 @@
     </style>
 </head>
 <body class="bg-gray-100">
+    <div class="animate-fade-in">
     <!-- ส่วนของแถบรายการเมนู -->
     <nav class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +34,6 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="d.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">หน้าหลัก</a>
                     <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">เกี่ยวกับสาขา</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">ทีมงาน</a>
                 </div>
                     <!-- ปุ่มที่จะกดพาเราไป -->
                     <div class="md:hidden">
@@ -81,5 +81,31 @@
             ดูประวัติ
         </a>
     </div>
+    </div>
+    <style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out both;
+}
+</style>
 </div>
+
+
+<div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
+    
+    <!-- รูปภาพ -->
+    <img src="https://i.pinimg.com/736x/3e/69/b4/3e69b4c7873840fc1d6bbd330fb150be.jpg" alt="สมาชิก" class="w-80 h-80 rounded-lg object-cover">
+
+    <!-- ข้อความ -->
+    <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">ปูร้ายสายโหด</h3>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">ชื่อเล่น:</h4>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">อายุ:</h4>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">email</h4>
+        <p class="text-gray-600 mb-4">นักศึกษาสาขาวิทยาการคอมพิวเตอร์</p>
+
+    </div>
             

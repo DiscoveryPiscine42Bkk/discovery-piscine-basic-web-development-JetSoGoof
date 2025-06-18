@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สาขา</title>
+    <head>
+        <!-- java scrips ที่ใช้ในการติดตั้งเครื่องมือ , 2 บรรทัดนี้คือการนำเข้าเครื่องมือ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card-hover {
+            transition: all 0.3s ease; 
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+        <div class="animate-fade-in">
+    <!-- ส่วนของแถบรายการเมนู -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!--ปรับขนาด-->>
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">CS Department</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="d.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">หน้าหลัก</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">เกี่ยวกับสาขา</a>
+
+                </div>
+                    <!-- ปุ่มที่จะกดพาเราไป -->
+                    <div class="md:hidden">
+                    <button class="mobile-menu-button text-gray-700 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- เมนู -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="d.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    หน้าหลัก
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    เกี่ยวกับสาขา
+                </a>
+            </div>
+        </div>
+    </nav>
+  
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">หลักสูตรครุศาสตร์อุตสาหกรรมบัณฑิต สาขาวิชาเทคโนโลยีคอมพิวเตอร์</h1>
+            <p class="text-xl text-gray-600">Bachelor of Science in Industrial Education Program in Computer technology</p>
+        </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
+    <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4"> สาขาวิชาเทคโนโลยีคอมพิวเตอร์(Computer technology)</h3>
+        <p class="mt-3 text-xl text-gray-600" mb-4 >มุ่งผลิตครูคอมพิวเตอร์ที่มีสมรรถนะด้านวิชาชีพและเทคโนโลยีคอมพิวเตอร์ สามารถถ่ายทอดความรู้
+และพัฒนาทักษะผู้เรียน สร้างนวัตกรรมเพื่อการเรียนรู้ พัฒนาชุมชนและสังคมอย่างยั่งยืน
+พร้อมดำรงชีวิตอย่างมีความสุข โดยยึดมั่นในจรรยาบรรณวิชาชีพและสอดคล้องกับข้อกำหนดของหลักสูตร
+ในสถานศึกษาทั้งระดับอาชีวศึกษาและการศึกษาขั้นพื้นฐาน</p>
+
+
+<hr>
+<h3 class="mt-6 text-xl font-semibold text-gray-900 "> อาชีพที่สามารถประกอบได้หลังสำเร็จการศึกษา</h3>
+<p class="mt-3 text-xl text-gray-600" mb-4 >
+(1) ครูสาขาวิชาคอมพิวเตอร์ในหลักสูตรต่ำกว่าระดับปริญญาตรีทั้งสถานศึกษาของรัฐและเอกชน
+</p>
+<p class="text-xl text-gray-600" mb-4 >
+    (2) นักฝึกอบรมด้านคอมพิวเตอร์ในสถานประกอบการ
+</p>
+<p class="text-xl text-gray-600" mb-4 >
+    (3) นักพัฒนาซอฟต์แวร์
+</p>
+<p class="text-xl text-gray-600" mb-4 >
+    (4) ผู้ดูแลระบบคอมพิวเตอร์และเครือข่ายคอมพิวเตอร์
+    </p>
+<p class="text-xl text-gray-600" mb-4 >
+    (5) นักพัฒนาระบบสมองกลฝั่งตัวและไอโอที
+    </p>
+<hr>
+
+        <h3 class="mt-6 text-xl font-semibold text-gray-900 ">โครงสร้างของหลักสูตร</h3>
+        <p class="mt-3 text-xl text-gray-600" mb-4 >หลักสูตรปริญญาตรี 4 ปี
+รับทั้งนักศึกษาไทยและนักศึกษาต่างชาติ
+จํานวนหน่วยกิตรวมตลอดหลักสูตร 132 หน่วยกิต</p>
+    </div>
+        </div>
