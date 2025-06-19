@@ -1,63 +1,183 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สาขา</title>
-    <head>
-        <!-- java scrips ที่ใช้ในการติดตั้งเครื่องมือ , 2 บรรทัดนี้คือการนำเข้าเครื่องมือ -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .card-hover {
-            transition: all 0.3s ease; 
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-<body class="bg-gray-100">
-        <div class="animate-fade-in">
-    <!-- ส่วนของแถบรายการเมนู -->
-    <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!--ปรับขนาด-->>
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-gray-900">CS Department</h1>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="d.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">หน้าหลัก</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">เกี่ยวกับสาขา</a>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Department - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
 
-                </div>
-                    <!-- ปุ่มที่จะกดพาเราไป -->
-                    <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-700 hover:text-blue-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- เมนู -->
-        <div class="mobile-menu hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="d.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                    หน้าหลัก
-                </a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                    เกี่ยวกับสาขา
-                </a>
-            </div>
-        </div>
-    </nav>
+    nav {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 1rem;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav h1 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #374151;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      background: none;
+      border: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 1rem;
+      border-top: 1px solid #e5e7eb;
+      background-color: white;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #374151;
+    }
+
+    .mobile-menu a:hover {
+      color: #2563eb;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .member-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mobile-menu-button {
+        display: none;
+      }
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 192px;
+      height: 192px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* Toggle button */
+    @media (max-width: 767px) {
+      .mobile-menu-button {
+        display: block;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- เมนู -->
+  <nav>
+    <div class="nav-container">
+      <h1>PortFolio</h1>
+      <div class="nav-links">
+        <a href="d.html">หน้าหลัก</a>
+
+      </div>
+      <button class="mobile-menu-button" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="d.html">หน้าหลัก</a>
+
+    </div>
+  </nav>
   
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Header Section -->
