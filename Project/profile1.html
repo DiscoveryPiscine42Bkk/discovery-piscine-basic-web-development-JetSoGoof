@@ -19,7 +19,14 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
+        
     </style>
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
 </head>
 <body class="bg-gray-100">
         <div class="animate-fade-in">
@@ -29,12 +36,14 @@
         <!--ปรับขนาด-->>
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-gray-900">CS Department</h1>
+                    <h1 class="text-xl font-bold text-gray-900">PortFolio</h1>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="d.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">หน้าหลัก</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">เกี่ยวกับสาขา</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">ทีมงาน</a>
+                     <a href="d.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    หน้าหลัก
+                <a href="#history" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">ประวัติ</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">contract</a>
+
                 </div>
                     <!-- ปุ่มที่จะกดพาเราไป -->
                     <div class="md:hidden">
@@ -52,8 +61,8 @@
                 <a href="d.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
                     หน้าหลัก
                 </a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">เกี่ยวกับสาขา</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">ทีมงาน</a>
+                <a href="#history" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">ประวัติ</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">contract</a>
             </div>
         </div>
     </nav>
@@ -71,7 +80,7 @@
     <!-- รูปภาพ -->
     <img src="https://i.pinimg.com/736x/3e/69/b4/3e69b4c7873840fc1d6bbd330fb150be.jpg" alt="สมาชิก" class="w-40 h-40 rounded-lg object-cover">
 
-    <!-- ข้อความ -->
+    <!-- ข้อความ1 -->
     <div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">ปูร้ายสายโหด</h3>
         <h4 class="text-l font-semibold text-gray-900 mb-2">ชื่อเล่น:</h4>
@@ -91,7 +100,23 @@
 </style>
 </div>
             
- <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
+ <div id="history" class="mt-[400px] bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
+    <!-- รูปภาพ -->
+    <img src="https://i.pinimg.com/736x/3e/69/b4/3e69b4c7873840fc1d6bbd330fb150be.jpg" alt="สมาชิก" class="w-80 h-80 rounded-lg object-cover">
+
+    <!-- ข้อความ2 -->
+    <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">ปูร้ายสายโหด</h3>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">ชื่อเล่น:</h4>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">อายุ:</h4>
+        <h4 class="text-l font-semibold text-gray-900 mb-2">email</h4>
+        <p class="text-gray-600 mb-4">นักศึกษาสาขาวิทยาการคอมพิวเตอร์</p>
+    </div>
+
+    
+    </div>
+
+    <div id="contact" class="mt-[400px] bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
     <!-- รูปภาพ -->
     <img src="https://i.pinimg.com/736x/3e/69/b4/3e69b4c7873840fc1d6bbd330fb150be.jpg" alt="สมาชิก" class="w-80 h-80 rounded-lg object-cover">
 
@@ -102,6 +127,4 @@
         <h4 class="text-l font-semibold text-gray-900 mb-2">อายุ:</h4>
         <h4 class="text-l font-semibold text-gray-900 mb-2">email</h4>
         <p class="text-gray-600 mb-4">นักศึกษาสาขาวิทยาการคอมพิวเตอร์</p>
-    </div>
-
     </div>
