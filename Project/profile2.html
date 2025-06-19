@@ -1,88 +1,238 @@
-<!DOCTYPE html>
+
+            
+
+    <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สมาชิกคนที่ 2</title>
-    <head>
-        <!-- java scrips ที่ใช้ในการติดตั้งเครื่องมือ , 2 บรรทัดนี้คือการนำเข้าเครื่องมือ -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .card-hover {
-            transition: all 0.3s ease; 
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Department - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 1rem;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav h1 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #374151;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      background: none;
+      border: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 1rem;
+      border-top: 1px solid #e5e7eb;
+      background-color: white;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #374151;
+    }
+
+    .mobile-menu a:hover {
+      color: #2563eb;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+
+    .text-center {
+      text-align: left;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .member-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mobile-menu-button {
+        display: none;
+      }
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 300px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 192px;
+      height: 192px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .card-content {
+      display: flex; 
+      align-items: center;
+      padding: 20px;
+      gap: 20px; 
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* Toggle button */
+    @media (max-width: 767px) {
+      .mobile-menu-button {
+        display: block;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-    <div class="animate-fade-in">
-    <!-- ส่วนของแถบรายการเมนู -->
-    <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!--ปรับขนาด-->>
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-gray-900">PortFolio</h1>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="d.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">หน้าหลัก</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">เกี่ยวกับสาขา</a>
-                </div>
-                    <!-- ปุ่มที่จะกดพาเราไป -->
-                    <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-700 hover:text-blue-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- เมนู -->
-        <div class="mobile-menu hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="d.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                    หน้าหลัก
-                </a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">เกี่ยวกับสาขา</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">ทีมงาน</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Header Section -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">ทีมงาน</h1>
-            <p class="text-xl text-gray-600">พบกับสมาชิกในทีม</p>
-        </div>
-
-        <!-- Team Members Section -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
-    <!-- รูปภาพ -->
-    <img src="https://i.pinimg.com/736x/a4/a6/c1/a4a6c1a9997c295c9efefa6f3fad93c9.jpg" alt="สมาชิก" class="w-40 h-40 rounded-lg object-cover">
-
-    <!-- ข้อความ -->
-    <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">ไก่ว่ะ</h3>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">ชื่อเล่น:</h4>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">อายุ:</h4>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">email</h4>
-        <p class="text-gray-600 mb-4">นักศึกษาสาขาวิทยาการคอมพิวเตอร์</p>
-        <a href="profile2.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-medium">
-            ดูประวัติ
-        </a>
+<body>
+  <!-- เมนู -->
+  <nav>
+    <div class="nav-container">
+      <h1>PortFolio</h1>
+      <div class="nav-links">
+        <a href="d.html">หน้าหลัก</a>
+        <a href="#history">ประวัติ</a>
+        <a href="#contract">contract</a>
+      </div>
+      <button class="mobile-menu-button" onclick="toggleMenu()">☰</button>
     </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="d.html">หน้าหลัก</a>
+      <a href="#history">ประวัติ</a>
+      <a href="#contract">contract</a>
     </div>
+  </nav>
+
+  <!-- เนื้อหา -->
+  <main>
+    <div class="text-center">
+      <h1 style="font-size:2rem; font-weight:bold; color:#111827; margin-bottom:0.5rem;">Portfolio</h1>
+      <p style="font-size:1.125rem; color:#6b7280;">พบกับสมาชิกในทีมของเรา</p>
+    </div>
+
+<div class="card" id="history">
+    <div class="card-content">
+      <img src="https://scontent.fbkk28-1.fna.fbcdn.net/v/t1.15752-9/507980346_1239146641237429_7856482191875089445_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=_FLgjlps1X0Q7kNvwHySxaj&_nc_oc=AdnyQKh9AZqD5lsBht5SKsYW0mv7dg6tI87R0kS1zh1hacNuxI8OQ3yYAdB6mQ1RCOI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk28-1.fna&oh=03_Q7cD2gFTYU23E2J94r7VGNA-T5iho1m7neJ7zDLoxxEUtdVL9Q&oe=687B6A17" alt="Member 2">
+      <div class="text-content">
+        <h3>ศรัณย์ สังขบุญ</h3>
+        <h4>ชื่อเล่น: เจ็ท</h4>
+        <h4>อายุ: 18</h4>
+        <h4>นักศึกษาสาขาเทคโนโลยีคอมพิวเตอร์</h4>
+      </div>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-content">
+      
+        <h2>ประวัติ:</h2>
+        <h4></h4>
+        <h4></h4>
+        <h4></h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="contract">
+    <div class="card-content">
+      <img src="https://scontent.fbkk28-1.fna.fbcdn.net/v/t1.15752-9/507980346_1239146641237429_7856482191875089445_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=_FLgjlps1X0Q7kNvwHySxaj&_nc_oc=AdnyQKh9AZqD5lsBht5SKsYW0mv7dg6tI87R0kS1zh1hacNuxI8OQ3yYAdB6mQ1RCOI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk28-1.fna&oh=03_Q7cD2gFTYU23E2J94r7VGNA-T5iho1m7neJ7zDLoxxEUtdVL9Q&oe=687B6A17" alt="Member 2" alt="profile">
+      <div class="text-content">
+        <div class="social-icons">
+    <a href="https://www.facebook.com/sarun.sungkhaboon">
+      <img src="data:image/png;base64,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" alt="facebook">
+    </a>
+    <a href="https://www.instagram.com/jetsogoof/">
+      <img src="data:image/png;base64,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" alt="IG">
+      </a>
+    </div>
+      </div>
+    </div>
+  </div>
+
+
     <style>
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(10px); }
@@ -92,21 +242,5 @@
   animation: fade-in 1s ease-out both;
 }
 </style>
-</div>
-
-
-<div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover p-6 flex items-center gap-6">
-    
-    <!-- รูปภาพ -->
-    <img src="https://i.pinimg.com/736x/3e/69/b4/3e69b4c7873840fc1d6bbd330fb150be.jpg" alt="สมาชิก" class="w-80 h-80 rounded-lg object-cover">
-
-    <!-- ข้อความ -->
-    <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">ปูร้ายสายโหด</h3>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">ชื่อเล่น:</h4>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">อายุ:</h4>
-        <h4 class="text-l font-semibold text-gray-900 mb-2">email</h4>
-        <p class="text-gray-600 mb-4">นักศึกษาสาขาวิทยาการคอมพิวเตอร์</p>
-
-    </div>
             
+ 
